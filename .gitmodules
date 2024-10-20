@@ -4,3 +4,6 @@
 [submodule "tt"]
 	path = tt
 	url = https://github.com/TinyTapeout/tt-support-tools
+[submodule "IHP-Open-PDK"]
+	path = IHP-Open-PDK
+	url = https://github.com/TinyTapeout/IHP-Open-PDK

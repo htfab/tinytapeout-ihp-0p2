@@ -1,8 +1,9 @@
 modules:
 # Hard coded module locations - other modules will be assigned dynamically
   - name: "chip_rom"
-    x: 7
-    y: 15
-  - name: "factory_test"
-    x: 7
-    y: 14
+    x: 5
+    y: 9
+    pg_vdd: false
+#  - name: "factory_test"
+#    x: 5
+#    y: 8

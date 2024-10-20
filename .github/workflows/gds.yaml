@@ -15,8 +15,9 @@ jobs:
   gds:
     env:
       PYTHONIOENCODING: utf-8
-      PDK_ROOT: ${{ github.workspace }}/pdk
-      TT_CONFIG: sky130.yaml
+      PDK: ihp-sg13g2
+      PDK_ROOT: ${{ github.workspace }}/IHP-Open-PDK
+      TT_CONFIG: ihp-sg13g2.yaml
       # Uncomment the following line to build only the specified projects:
       #TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test
 
@@ -33,14 +34,9 @@ jobs:
       - name: Checkout OpenLane 2 repo
         uses: actions/checkout@v4
         with:
-          repository: efabless/openlane2
+          repository: smunaut/openlane2
           path: openlane2
           ref: ${{ env.OPENLANE_TAG }}
-
-      - name: Patch OpenLane 2 repo
-        working-directory: openlane2
-        run:
-          git apply --allow-empty ../patches/openlane2.patch
 
       - name: setup python
         uses: actions/setup-python@v5
@@ -60,16 +56,10 @@ jobs:
           extraPullNames: ${{ vars.CACHIX_CACHE_EXTRA || 'openlane' }}
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
-      - name: Install Sky130 PDK
-        uses: TinyTapeout/volare-action@v2
-        with:
-          pdk_name: sky130
-          pdk_version: ${{ env.SKY130_PDK_VERSION }}
-          pdk_root: ${{ env.PDK_ROOT }}
-
       # run OpenLane to build the GDS
       - name: Harden Chip ROM
-        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python -m openlane tt/rom/config.json"
+        working-directory: tt/rom
+        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python build.ihp-sg13g2.py"
 
       - name: Harden tt_ctrl
         working-directory: tt-multiplexer/ol2/tt_ctrl
@@ -84,12 +74,12 @@ jobs:
 
       - name: Harden tt_top
         working-directory: tt-multiplexer/ol2/tt_top
-        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python build.py --skip-xor-checks"
+        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python build.py"
 
       - name: Copy final results
         run: python ./tt/configure.py --copy-final-results
 
-      - name: Create eFabless submission
+      - name: Create IHP submission
         run: python ./tt/configure.py --create-efabless-submission
 
       - name: upload GDS artifact
@@ -118,10 +108,10 @@ jobs:
           name: shuttle_index
           path: shuttle_index.json
 
-      - name: upload Efabless submission directory
+      - name: upload IHP submission directory
         uses: actions/upload-artifact@v4
         with:
-          name: efabless_submission
+          name: ihp_submission
           path: efabless
 
       # Install iverilog, cocotb (required for GL test)
