@@ -95,7 +95,10 @@ jobs:
         with:
           name: macros
           path: |
+            tt/rom/runs/
             tt-multiplexer/cfg/*.yaml
+            tt-multiplexer/ol2/tt_ctrl/runs/
+            tt-multiplexer/ol2/tt_mux/runs/
             tt-multiplexer/ol2/tt_top/gds/*
             tt-multiplexer/ol2/tt_top/lef/*
             tt-multiplexer/ol2/tt_top/spef/*
