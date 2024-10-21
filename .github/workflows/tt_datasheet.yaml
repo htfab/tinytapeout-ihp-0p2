@@ -15,7 +15,7 @@ jobs:
   build_datasheet:
     runs-on: ubuntu-latest
     env:
-      TT_CONFIG: sky130.yaml
+      TT_CONFIG: ihp-sg13g2.yaml
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
