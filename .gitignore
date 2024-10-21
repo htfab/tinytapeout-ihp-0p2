@@ -9,12 +9,14 @@ shuttle_index.json
 shuttle_index.md
 
 # Auto generated eFabless submission files:
-efabless/gds/*.gds
-efabless/gds/*.lef
-efabless/verilog/gl/tt_ihp_wrapper.v
-efabless/verilog/gl/tt_ihp_wrapper.nl.v
-efabless/verilog/rtl/user_defines.v
-efabless/README.md
+efabless/
+
+# Auto generated IHP submission files:
+ihp/gds/*.gds
+ihp/verilog/gl/tt_ihp_wrapper.v
+ihp/verilog/gl/tt_ihp_wrapper.nl.v
+ihp/verilog/rtl/user_defines.v
+ihp/README.md
 
 # pip-compile
 *.egg-info
