@@ -1,5 +1,5 @@
--v $(EFABLESS_SUBMISSION)/verilog/gl/tt_ihp_wrapper.v
--v $(TT_GL_VERILOG)/tt_ctrl.v
--v $(TT_GL_VERILOG)/tt_mux.v
--v $(TT_GL_VERILOG)/tt_um_chip_rom.v
+-v $(EFABLESS_SUBMISSION)/verilog/gl/tt_ihp_wrapper.nl.v
+-v $(TT_GL_VERILOG)/tt_ctrl.nl.v
+-v $(TT_GL_VERILOG)/tt_mux.nl.v
+-v $(TT_GL_VERILOG)/tt_um_chip_rom.nl.v
 -v $(USER_PROJECT_VERILOG)/../projects/tt_um_factory_test/tt_um_factory_test.v

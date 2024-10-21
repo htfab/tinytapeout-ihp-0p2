@@ -12,6 +12,7 @@ shuttle_index.md
 efabless/gds/*.gds
 efabless/gds/*.lef
 efabless/verilog/gl/tt_ihp_wrapper.v
+efabless/verilog/gl/tt_ihp_wrapper.nl.v
 efabless/verilog/rtl/user_defines.v
 efabless/README.md
 
