@@ -1,9 +1,9 @@
 modules:
   - name: "chip_rom"
-    x: 7
-    y: 15
+    x: 5
+    y: 9
     pg_vdd: false
   - name: "factory_test"
-    x: 7
-    y: 14
+    x: 5
+    y: 8
     pg_vdd: false
