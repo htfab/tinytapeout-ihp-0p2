@@ -1,0 +1,425 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+UNITS
+    DATABASE MICRONS 1000 ;
+END UNITS
+
+VIA tt_um_factory_test_via1_2_2200_440_1_5_410_410
+  VIARULE via1Array ;
+  CUTSIZE 0.19 0.19 ;
+  LAYERS Metal1 Via1 Metal2 ;
+  CUTSPACING 0.22 0.22 ;
+  ENCLOSURE 0.01 0.125 0.05 0.005 ;
+  ROWCOL 1 5 ;
+END tt_um_factory_test_via1_2_2200_440_1_5_410_410
+
+VIA tt_um_factory_test_via2_3_2200_440_1_5_410_410
+  VIARULE via2Array ;
+  CUTSIZE 0.19 0.19 ;
+  LAYERS Metal2 Via2 Metal3 ;
+  CUTSPACING 0.22 0.22 ;
+  ENCLOSURE 0.05 0.005 0.005 0.05 ;
+  ROWCOL 1 5 ;
+END tt_um_factory_test_via2_3_2200_440_1_5_410_410
+
+VIA tt_um_factory_test_via3_4_2200_440_1_5_410_410
+  VIARULE via3Array ;
+  CUTSIZE 0.19 0.19 ;
+  LAYERS Metal3 Via3 Metal4 ;
+  CUTSPACING 0.22 0.22 ;
+  ENCLOSURE 0.005 0.05 0.05 0.005 ;
+  ROWCOL 1 5 ;
+END tt_um_factory_test_via3_4_2200_440_1_5_410_410
+
+VIA tt_um_factory_test_via4_5_2200_440_1_5_410_410
+  VIARULE via4Array ;
+  CUTSIZE 0.19 0.19 ;
+  LAYERS Metal4 Via4 Metal5 ;
+  CUTSPACING 0.22 0.22 ;
+  ENCLOSURE 0.05 0.005 0.185 0.05 ;
+  ROWCOL 1 5 ;
+END tt_um_factory_test_via4_5_2200_440_1_5_410_410
+
+MACRO tt_um_factory_test
+  FOREIGN tt_um_factory_test 0 0 ;
+  CLASS BLOCK ;
+  SIZE 212.16 BY 154.98 ;
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  76.22 0 76.42 0.72 ;
+    END
+  END clk
+  PIN ena
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  1.34 0 1.54 0.72 ;
+    END
+  END ena
+  PIN rst_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  103.1 154.26 103.3 154.98 ;
+    END
+  END rst_n
+  PIN ui_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  104.06 154.26 104.26 154.98 ;
+    END
+  END ui_in[0]
+  PIN ui_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  102.14 0 102.34 0.72 ;
+    END
+  END ui_in[1]
+  PIN ui_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  100.22 0 100.42 0.72 ;
+    END
+  END ui_in[2]
+  PIN ui_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  105.02 154.26 105.22 154.98 ;
+    END
+  END ui_in[3]
+  PIN ui_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  107.9 154.26 108.1 154.98 ;
+    END
+  END ui_in[4]
+  PIN ui_in[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  113.66 154.26 113.86 154.98 ;
+    END
+  END ui_in[5]
+  PIN ui_in[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  111.74 154.26 111.94 154.98 ;
+    END
+  END ui_in[6]
+  PIN ui_in[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  114.62 154.26 114.82 154.98 ;
+    END
+  END ui_in[7]
+  PIN uio_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  88.7 0 88.9 0.72 ;
+    END
+  END uio_in[0]
+  PIN uio_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  101.18 0 101.38 0.72 ;
+    END
+  END uio_in[1]
+  PIN uio_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  99.26 0 99.46 0.72 ;
+    END
+  END uio_in[2]
+  PIN uio_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  109.82 154.26 110.02 154.98 ;
+    END
+  END uio_in[3]
+  PIN uio_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  112.7 154.26 112.9 154.98 ;
+    END
+  END uio_in[4]
+  PIN uio_in[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  119.42 154.26 119.62 154.98 ;
+    END
+  END uio_in[5]
+  PIN uio_in[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  123.26 154.26 123.46 154.98 ;
+    END
+  END uio_in[6]
+  PIN uio_in[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  120.38 154.26 120.58 154.98 ;
+    END
+  END uio_in[7]
+  PIN uio_oe[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  89.66 154.26 89.86 154.98 ;
+    END
+  END uio_oe[0]
+  PIN uio_oe[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  91.58 154.26 91.78 154.98 ;
+    END
+  END uio_oe[1]
+  PIN uio_oe[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  93.5 154.26 93.7 154.98 ;
+    END
+  END uio_oe[2]
+  PIN uio_oe[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  94.46 154.26 94.66 154.98 ;
+    END
+  END uio_oe[3]
+  PIN uio_oe[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  92.54 154.26 92.74 154.98 ;
+    END
+  END uio_oe[4]
+  PIN uio_oe[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  95.42 154.26 95.62 154.98 ;
+    END
+  END uio_oe[5]
+  PIN uio_oe[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  96.38 154.26 96.58 154.98 ;
+    END
+  END uio_oe[6]
+  PIN uio_oe[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  90.62 154.26 90.82 154.98 ;
+    END
+  END uio_oe[7]
+  PIN uio_out[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  90.62 0 90.82 0.72 ;
+    END
+  END uio_out[0]
+  PIN uio_out[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  96.38 0 96.58 0.72 ;
+    END
+  END uio_out[1]
+  PIN uio_out[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  95.42 0 95.62 0.72 ;
+    END
+  END uio_out[2]
+  PIN uio_out[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  106.94 154.26 107.14 154.98 ;
+    END
+  END uio_out[3]
+  PIN uio_out[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  110.78 154.26 110.98 154.98 ;
+    END
+  END uio_out[4]
+  PIN uio_out[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  118.46 154.26 118.66 154.98 ;
+    END
+  END uio_out[5]
+  PIN uio_out[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  121.34 154.26 121.54 154.98 ;
+    END
+  END uio_out[6]
+  PIN uio_out[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  122.3 154.26 122.5 154.98 ;
+    END
+  END uio_out[7]
+  PIN uo_out[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  89.66 0 89.86 0.72 ;
+    END
+  END uo_out[0]
+  PIN uo_out[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  98.3 0 98.5 0.72 ;
+    END
+  END uo_out[1]
+  PIN uo_out[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  97.34 0 97.54 0.72 ;
+    END
+  END uo_out[2]
+  PIN uo_out[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  105.98 154.26 106.18 154.98 ;
+    END
+  END uo_out[3]
+  PIN uo_out[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  108.86 154.26 109.06 154.98 ;
+    END
+  END uo_out[4]
+  PIN uo_out[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  115.58 154.26 115.78 154.98 ;
+    END
+  END uo_out[5]
+  PIN uo_out[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  116.54 154.26 116.74 154.98 ;
+    END
+  END uo_out[6]
+  PIN uo_out[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT  117.5 154.26 117.7 154.98 ;
+    END
+  END uo_out[7]
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal5 ;
+        RECT  166.58 3.56 168.78 151.42 ;
+        RECT  90.98 3.56 93.18 151.42 ;
+        RECT  15.38 3.56 17.58 151.42 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal5 ;
+        RECT  204.38 3.56 206.58 151.42 ;
+        RECT  128.78 3.56 130.98 151.42 ;
+        RECT  53.18 3.56 55.38 151.42 ;
+    END
+  END VPWR
+  OBS
+    LAYER Metal1 ;
+     RECT  1.34 0 209.28 154.98 ;
+    LAYER Metal2 ;
+     RECT  1.34 0 209.28 154.98 ;
+    LAYER Metal3 ;
+     RECT  1.34 0 209.28 154.98 ;
+    LAYER Metal4 ;
+     RECT  1.34 0 209.28 154.98 ;
+    LAYER Metal5 ;
+     RECT  1.34 0 209.28 154.98 ;
+  END
+END tt_um_factory_test
+END LIBRARY

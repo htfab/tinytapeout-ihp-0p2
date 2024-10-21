@@ -4,6 +4,7 @@ modules:
     x: 5
     y: 9
     pg_vdd: false
-#  - name: "factory_test"
-#    x: 5
-#    y: 8
+  - name: "factory_test"
+    x: 5
+    y: 8
+    pg_vdd: false
