@@ -3,6 +3,9 @@
 ## Environment setup
 
 ```bash
+export TT_CONFIG=ihp-sg13g2.yaml
+export PDK=ihp-sg13g2
+export PDK_ROOT=`pwd`/IHP-Open-PDK
 export OPENLANE2_ROOT=`pwd`/openlane2
 ```
 
