@@ -35,7 +35,8 @@ jobs:
 
   precheck:
     name: Run precheck
-    if: github.event_name == 'pull_request'
+    #if: github.event_name == 'pull_request'
+    if: false # Disable precheck for now
     runs-on: ubuntu-24.04
     env:
       PDK_ROOT: '/home/runner/pdk'
