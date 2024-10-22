@@ -3,14 +3,10 @@
 ## Environment setup
 
 ```bash
-export OPENLANE2_ROOT=~/openlane2
+export OPENLANE2_ROOT=`pwd`/openlane2
 ```
 
-Then install OpenLane 2 with Nix, as explained [here](https://openlane2.readthedocs.io/en/latest/getting_started/nix_installation/index.html), taking care of the following:
-
-1. Look at the value of `OPENLANE_TAG` in [.github/config/openlane.txt](.github/config/openlane.txt) to find the exact OpenLane 2 commit you need to check out. Installing a different version will likely not work, as OpenLane 2 is still in beta and the API is not very stable.
-
-2. Clone OpenLane 2 to ~/openlane2 (or change the value of the `OPENLANE2_ROOT` environment variable).
+Make sure to setup Nix for openlane2, as explained [here](https://openlane2.readthedocs.io/en/latest/getting_started/nix_installation/index.html).
 
 ## Repository setup
 

@@ -31,13 +31,6 @@ jobs:
       - name: Load OpenLane environment variables
         run: cat .github/config/openlane.txt | tee -a $GITHUB_ENV
 
-      - name: Checkout OpenLane 2 repo
-        uses: actions/checkout@v4
-        with:
-          repository: smunaut/openlane2
-          path: openlane2
-          ref: ${{ env.OPENLANE_TAG }}
-
       - name: setup python
         uses: actions/setup-python@v5
         with:
