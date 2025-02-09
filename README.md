@@ -10,3 +10,5 @@
 To learn about the chip's architecture, please refer to [the multiplexer documentation](https://github.com/TinyTapeout/tt-multiplexer/blob/main/docs/INFO.md).
 
 If you want to build Tiny Tapeout yourself, please refer to [BUILDING.md](BUILDING.md).
+
+The manufacturing of Tiny Tapeout IHP 0p2 silicon was funded by the German BMBF project FMD-QNC (16ME0831).
