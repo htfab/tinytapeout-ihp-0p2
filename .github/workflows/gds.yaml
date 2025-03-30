@@ -51,8 +51,7 @@ jobs:
 
       # run OpenLane to build the GDS
       - name: Harden Chip ROM
-        working-directory: tt/rom
-        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python build.ihp-sg13g2.py"
+        run: nix-shell $GITHUB_WORKSPACE/openlane2/shell.nix --run "python -m openlane --pdk-root $PDK_ROOT --manual-pdk --pdk $PDK tt/rom/config_ihp.json"
 
       - name: Harden tt_ctrl
         working-directory: tt-multiplexer/ol2/tt_ctrl
