@@ -18,6 +18,7 @@ jobs:
       PDK: ihp-sg13g2
       PDK_ROOT: ${{ github.workspace }}/IHP-Open-PDK
       TT_CONFIG: ihp-sg13g2.yaml
+      MAGIC_VERSION: 8.3.524
       # Uncomment the following line to build only the specified projects:
       #TT_ONLY_PROJECTS: tt_um_chip_rom,tt_um_factory_test
 
@@ -79,6 +80,21 @@ jobs:
 
       - name: Add logo
         run: python ihp-scripts/ihp_add_logo.py ihp/gds/tt_ihp_wrapper.gds ihp/gds/tt_ihp_wrapper.gds
+
+      - name: Install magic VLSI (for fill generation)
+        run: |
+          sudo apt-get install -y m4 python3 libx11-dev tcl-dev tk-dev libcairo2-dev mesa-common-dev libglu1-mesa-dev
+          git clone -b ${MAGIC_VERSION} https://github.com/RTimothyEdwards/magic magic
+          cd magic
+          ./configure
+          make -j4 
+          sudo make install
+                
+      - name: Generate fill
+        run: |
+          python ${PDK_ROOT}/${PDK}/libs.tech/magic/generate_fill.py ihp/gds/tt_ihp_wrapper.gds -dist
+          python ihp-scripts/ihp_merge_fill.py ihp/gds/tt_ihp_wrapper.gds ihp/gds/tt_ihp_wrapper_fill_pattern.gds.gz ihp/gds/tt_ihp_wrapper_filled.gds
+          rm ihp/gds/tt_ihp_wrapper_fill_pattern.gds.gz
 
       - name: upload GDS artifact
         if: success() || failure()
