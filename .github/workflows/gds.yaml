@@ -93,8 +93,9 @@ jobs:
       - name: Generate fill
         run: |
           python ${PDK_ROOT}/${PDK}/libs.tech/magic/generate_fill.py ihp/gds/tt_ihp_wrapper.gds -dist
-          python ihp-scripts/ihp_merge_fill.py ihp/gds/tt_ihp_wrapper.gds ihp/gds/tt_ihp_wrapper_fill_pattern.gds.gz ihp/gds/tt_ihp_wrapper_filled.gds
-          rm ihp/gds/tt_ihp_wrapper_fill_pattern.gds.gz
+          gunzip ihp/gds/tt_ihp_wrapper_fill_pattern.gds.gz
+          python ihp-scripts/ihp_merge_fill.py ihp/gds/tt_ihp_wrapper.gds ihp/gds/tt_ihp_wrapper_fill_pattern.gds ihp/gds/tt_ihp_wrapper_filled.gds
+          rm ihp/gds/tt_ihp_wrapper_fill_pattern.gds
 
       - name: upload GDS artifact
         if: success() || failure()
